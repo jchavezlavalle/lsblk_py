@@ -7,6 +7,9 @@ import json
 
 # create a function that runs suprocess and returns the output
 def run_command(command):
+    """
+    Runs the lsblk command and obtains the output
+    """
     cmd = shlex.split(command)
     output = subprocess.check_output(cmd)
     return output
@@ -38,6 +41,9 @@ def run_lsblk(device):
 
 
 def main(device):
+    """
+    Main execution of the program: This binds it all
+    """
     print(f"         '{run_lsblk(device)}'")
 
 if __name__ == '__main__':
