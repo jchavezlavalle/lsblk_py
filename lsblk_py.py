@@ -40,13 +40,13 @@ def run_lsblk(device):
         for child in parent.get('children', []):
             if child['name'] == device:
                 return child
-
+    return {}
 
 def main(device):
     """
     Main execution of the program: This binds it all
     """
-    print(f"         '{run_lsblk(device)}'")
+    print(f"lsblk output:         {run_lsblk(device)}")
 
 if __name__ == '__main__':
     import sys

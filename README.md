@@ -45,13 +45,13 @@ But it is a block device, only that it is not recognized since we are inside a c
 Let's check for the same device as before loop4:
 ```
 $ python3 lsblk_py.py loop4
-         '{'name': 'loop4', 'size': '165,1M', 'type': 'loop', 'mountpoint': '/snap/mysql-workbench-community/13'}'
+         lsblk output:         '{'name': 'loop4', 'size': '165,1M', 'type': 'loop', 'mountpoint': '/snap/mysql-workbench-community/13'}'
 ```
 Okay, now let's check for an interesting use case, a device with children in the branch, like for example sda:
 
 ```
 $ python3 lsblk_py.py sda
-         '{'name': 'sda', 'size': '931,5G', 'type': 'disk', 'mountpoint': None, 'children': [{'name': 'sda1', 'size': '512M', 'type': 'part', 'mountpoint': '/boot/efi'}, {'name': 'sda2', 'size': '1M', 'type': 'part', 'mountpoint': None}, {'name': 'sda3', 'size': '931G', 'type': 'part', 'mountpoint': '/'}]}'
+         lsblk output:         '{'name': 'sda', 'size': '931,5G', 'type': 'disk', 'mountpoint': None, 'children': [{'name': 'sda1', 'size': '512M', 'type': 'part', 'mountpoint': '/boot/efi'}, {'name': 'sda2', 'size': '1M', 'type': 'part', 'mountpoint': None}, {'name': 'sda3', 'size': '931G', 'type': 'part', 'mountpoint': '/'}]}'
 ```
 
 Yay! now we can see the expected output in a JSON format only for the needed device 😄🚀
