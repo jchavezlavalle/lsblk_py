@@ -43,10 +43,12 @@ def run_lsblk(device):
     return {}
 
 def main(device):
+
+    output = run_lsblk(device)
     """
     Main execution of the program: This binds it all
     """
-    print(f"lsblk output:         {run_lsblk(device)}")
+    print(f"lsblk output:         {output}")
 
 if __name__ == '__main__':
     import sys
